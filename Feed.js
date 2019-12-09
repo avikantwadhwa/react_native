@@ -20,6 +20,20 @@ export default class CardImageExample extends Component {
             Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
           });
     
-         
+          this.setState({ loading: false });
+  
+    }
+      
+    render() {
+        
+    return (
+      <Container>
+
+      </Container>
+    );
+  }
+  
+}
+
 
 

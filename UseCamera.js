@@ -9,4 +9,14 @@ export default class CameraExample extends React.Component {
     type: Camera.Constants.Type.back,
   };
 
-  
+  async componentDidMount() {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
+    this.setState({ hasCameraPermission: status === 'granted' });
+  }
+
+  render() {
+    const { hasCameraPermission } = this.state;
+    if (hasCameraPermission === null) {
+      return <View />;
+    } 
+}

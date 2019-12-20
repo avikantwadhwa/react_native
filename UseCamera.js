@@ -30,5 +30,5 @@ export default class CameraExample extends React.Component {
                 backgroundColor: 'transparent',
                 flexDirection: 'row',
               }}>
-             
+              
 }

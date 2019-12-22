@@ -8,7 +8,7 @@ class ObservableStore{
     @action listmethod(val){
         this.list.push(val)
     }
-    @computed get 
+    
 }
 const observableStore = new ObservableStore();
 export default observableStore;

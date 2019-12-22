@@ -9,3 +9,5 @@ class ObservableStore{
         this.list.push(val)
     }
 }
+const observableStore = new ObservableStore();
+export default observableStore;

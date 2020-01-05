@@ -12,7 +12,7 @@ export default class CardImageExample extends Component {
       }
     
     
-      async componentWillMount() {
+       componentWillMount() {
 
         
         await Font.loadAsync({

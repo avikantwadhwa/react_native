@@ -75,7 +75,24 @@ class App extends Component {
     });
   }
   
-  
+  render(){
+    return (
+      <View style={styles.container}>
+        <Text>Open up start working on your app!</Text>
+        <Button title="CLICK" onPress={()=>this._handlelogin()}></Button>
+        {
+          observableStore.list.map((v)=>{
+            return (
+              <View><Text>{v}</Text></View>
+            )
+          })
+        }
+        
+        
+        </View>
+    );
+    }
+  }
  
 
 const styles = StyleSheet.create({

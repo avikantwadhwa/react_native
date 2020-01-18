@@ -45,4 +45,46 @@ class App extends Component {
     console.log(observableStore.list)
   }
 
+  async  _handlesignup()
+  {
+
+    try{
+
+          await firebase.auth()
+              .createUserWithEmailAndPassword(email, pass);
+  
+          alert("Account created");
+  
+          // Navigate to the Home page, the user is auto logged in
+  
+      } catch (error) {
+        alert(error.toString())
+      }
+  
+  
+}
+
+
+  _handlelogin()
+  {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert(errorMessage)
+    });
+  }
+  
+  
  
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+   
+    
+  },
+});
+
+export default App

@@ -16,14 +16,14 @@ class App extends Component {
   state = {
     image: null,
     category:[{
-      value: 'Hospital',
+      value: ' ',
     }, {
-      value: 'Fire',
+      value: ' ',
     }, {
-      value: 'Road',
+      value: '' ,
     }]
   };
-
+  
   componentDidMount()
   {
     const firebaseConfig = {
@@ -45,63 +45,4 @@ class App extends Component {
     console.log(observableStore.list)
   }
 
- async  _handlesignup()
-  {
-
-    try{
-
-          await firebase.auth()
-              .createUserWithEmailAndPassword(email, pass);
-  
-          alert("Account created");
-  
-          // Navigate to the Home page, the user is auto logged in
-  
-      } catch (error) {
-        alert(error.toString())
-      }
-  
-  
-}
-
-
-  _handlelogin()
-  {
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorMessage)
-    });
-  }
-  
-  
-  render(){
-  return (
-    <View style={styles.container}>
-      <Text>Open up start working on your app!</Text>
-      <Button title="CLICK" onPress={()=>this._handlelogin()}></Button>
-      {
-        observableStore.list.map((v)=>{
-          return (
-            <View><Text>{v}</Text></View>
-          )
-        })
-      }
-      
-      
-      </View>
-  );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-   
-    
-  },
-});
-
-export default App
+ 

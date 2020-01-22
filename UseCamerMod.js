@@ -7,6 +7,15 @@ export default class UseCamerMod extends Component {
         image:null
     }
 
+    _handleimage=async ()=>{
+
+    const image=await ImagePicker.launchCameraAsync()
+        
+    this.setState({
+        image:image.uri
+    })
+    console.log(this.state.image)
+    }
     render() {
         let { image } = this.state;
         return (

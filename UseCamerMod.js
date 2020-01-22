@@ -7,11 +7,16 @@ export default class UseCamerMod extends Component {
         image:null
     }
 
-    
-    
-    
     render() {
-        
-        
+        let { image } = this.state;
+        return (
+            <ScrollView>
+                <Text> textInComponent </Text>
+                <Image source={{ uri: image }}/>
+                
+                <Button title="Camera" onPress={()=>this._handleimage()}></Button>
+                
+            </ScrollView>
+        )
     }
 }

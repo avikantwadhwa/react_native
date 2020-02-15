@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlatList, ActivityIndicator, Text, View } from 'react-native';
-
+import { FlatList, ActivityIndicator, Text, View,Button,ScrollView} from 'react-native';
+import ImagePickerExample from "./UseImage"
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -49,10 +49,14 @@ export default class App extends React.Component {
   render() {
    
       return (
-      <View>
-      <Text>Avikant</Text>
+        <ScrollView>
+        <View
+        style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+      >
+        <ImagePickerExample/>
       </View>
-      )
+        </ScrollView>
+            )
   
   }
 }

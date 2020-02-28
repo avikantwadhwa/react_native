@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Button, Image, View } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
+// import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
+import ImagePicker from 'react-native-image-crop-picker';
 import * as Permissions from 'expo-permissions';
 import { Dropdown } from 'react-native-material-dropdown';
 
@@ -26,8 +27,6 @@ export default class ImagePickerExample extends React.Component {
           title="Pick an image from camera roll"
           onPress={this._pickImage}
         >Pick</Button>
-        {image &&
-          <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
         
           </View>
     );
@@ -47,16 +46,26 @@ export default class ImagePickerExample extends React.Component {
   }
 
   _pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
+    // let result = await ImagePicker.launchImageLibraryAsync({
+    //   mediaTypes: ImagePicker.MediaTypeOptions.All,
+    //   });
+    console.log("Avi")
+    try
+    {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      cropping: true
+    }).then(image => {
+      console.log(image);
     });
-
-    console.log(result);
-
-    if (!result.cancelled) {
-      this.setState({ image: result.uri });
     }
+    catch(err)
+    {
+      console.log(err.message)
+    }
+    // if (!result.cancelled) {
+    //   this.setState({ image: result.uri });
+    // }
   };
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { FlatList, ActivityIndicator, Text, View,Button,ScrollView} from 'react-native';
 import ImagePickerExample from "./UseImage"
+import list_messages from './Message'
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -48,12 +50,13 @@ export default class App extends React.Component {
 
   render() {
    
+    list_messages()
       return (
         <ScrollView>
         <View
         style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
       >
-        <ImagePickerExample/>
+   
       </View>
         </ScrollView>
             )
